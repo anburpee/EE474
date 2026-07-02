@@ -1,3 +1,4 @@
+#include <stdint.h> // need to include for uint8_t
 #include <stdio.h>
 #include <string.h>
 #include "hwlib.h"
@@ -7,7 +8,7 @@ void my_memcpy(void* dest, const void* src, size_t size) {
     // =================> TODO: Implement byte-by-byte memory copy using uint8_t*
     uint8_t* dest1 = (uint8_t*)dest;
     const uint8_t* src1 = (uint8_t*)src;
-    for (int i = 0; i < size; i ++) {
+    for (size_t i = 0; i < size; i ++) {
         dest1[i] = src1[i];
     }
 }
@@ -23,10 +24,10 @@ void run_pointer_basics() {
 
     // =================> TODO: Print value and address of each element using a for loop
     for (int i = 0; i < 5; i++) {
-        printf("Address of intArr[%d]: %p\n", i, (void*)(&intArr[i]));
+        printf("Address of intArr[%d]: %p | value: %d\n", i, (void*)(&intArr[i]));
     }
     for (int i = 0; i < 5; i++) {
-        printf("Address of charArr[%d]: %p\n", i, (void*)(&charArr[i]));
+        printf("Address of charArr[%d]: %p | value: %d\n", i, (void*)(&charArr[i]));
     }
 
 

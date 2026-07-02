@@ -4,18 +4,18 @@
 
 // Step 1
 // =================> TODO: Define a Sensor struct with int id, char label[10], float reading
-struct Sensor {
+typedef struct Sensor {
     int id;
     char label[10];
     float reading;
-}
+} Sensor;
 
 void run_sensor_structs() {
     // Step 1 Continued
     // =================> TODO: Declare a Sensor instance and set its fields
-    Sensor sensor0 = (Sensor)malloc(sizeof(Sensor));
+    Sensor sensor0;
     sensor0.id = 123;
-    sensor0.label = "label1";
+    strncpy(sensor0.label, "label1", 7); // sensor0.label = "label1"
     sensor0.reading = 1.23;
 
     // =================> TODO: Print its values
@@ -24,7 +24,7 @@ void run_sensor_structs() {
 
     // Step 2
     // =================> TODO: Declare a Sensor pointer pointing to the struct from Step 1
-    Sensor* sensor1 = (Sensor*)malloc(sizeof(Sensor*));
+    Sensor* sensor1 = (Sensor*)malloc(sizeof(Sensor));
     *sensor1 = sensor0;
 
     // =================> TODO: Use the pointer to modify reading and print again
@@ -37,20 +37,17 @@ void run_sensor_structs() {
 
     // =================> TODO: Fill in ids, labels (T0, T1, T2), and readings
     for (int i = 0; i < 3; i++) {
-        snprintf(sensorArr[i].id, sizeof(sensorArr[0].id), "%d", i);
+        sensorArr[i].id = i;
         snprintf(sensorArr[i].label, sizeof(sensorArr[0].label), "T%d", i);
-        snprintf(sensorArr[i].reading, sizeof(sensorArr[0].reading), "%f", i + 0.67);
+        sensorArr[i].reading = (float)i + 0.67;
     }
 
     // =================> TODO: Print all sensor info using pointer
     for (int i = 0; i < 3; i++) {
-        printf("sensor %d - id=%d, label=%s, reading=%f\n", i, sensor1->id, sensor1->label, sensor1->reading);
+        printf("sensor %d - id=%d, label=%s, reading=%f\n", i, sensorArr[i].id, sensorArr[i].label, sensorArr[i].reading);
     }
     
     // =================> TODO: Free memory
-    free(sensor0);
     free(sensor1);
-    for (int i = 0; i < 3; i++) {
-        free(sensorArr[i]);
-    }
+    free(sensorArr);
 }

@@ -8,10 +8,10 @@ void run_intro_pointers() {
     int a = 42;
 
     // =================> TODO: Create a pointer p to a
-    int* p = a;
+    int* p = &a;
 
     // =================> TODO: Use p to reassign a to the value of 100
-    p* = 100;
+    *p = 100;
 
     // =================> TODO: Print a and *p, and the address of a
     printf("a = %d, *p = %d\n", a, *p);
@@ -19,13 +19,13 @@ void run_intro_pointers() {
 
     // Step 2
     // =================> TODO: Create another pointer q and set it equal to p
-    int q* = p
+    int* q = p;
 
     // =================> TODO: Use q to change value of a
-    q* = 55
+    *q = 55;
 
     // =================> TODO: Print a, *p, and *q
-    printf("a = %d, *p = %d, *q = %d\n");
+    printf("a = %d, *p = %d, *q = %d\n", a, *p, *q);
 
     // Step 3
     // =================> TODO: Declare b = 200
@@ -36,8 +36,8 @@ void run_intro_pointers() {
     p = &b;
 
     // =================> TODO: Use p to reassign b to be the value 200
-    *p = 200
+    *p = 200;
 
     // =================> TODO: Print a and b
-    printf("a = %d, b = %d");
+    printf("a = %d, b = %d", a, b);
 }

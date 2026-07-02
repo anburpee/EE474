@@ -63,13 +63,24 @@ Part III: Structs and Simulated Sensor Records
 
 1. What is a pointer to a struct, and how is it used?  
 Answer:
+A struct is stored in a contiguous block of memory. A pointer to a struct points to the start address
+in memory where the struct is stored. A pointer to a struct is used when accessing the struct for
+reads/writes, or during memory allocation for the struct (malloc) or freeing of it.
 
 
 2. How does dynamic memory allocation work in C?  
 Answer:
+Dynamic memory allocation allocates memory in the heap during runtime, as opposed to static
+memory that is allocated in the stack during compile time. Whenever you allocate memory using
+malloc, you must be sure to call free() to free up the memory after use.
 
 3. Why is dynamic allocation useful in embedded systems?  
 Answer:
+Dynamic memory allocation is used in embedded systems because when you are are working with a
+limited amount of memory (Which you pretty much always are), it's better to allocate only as much
+memory as strictly necessary through malloc during runtime instead of allocating a huge amount of
+unnecessary memory (that is predicted to be needed) during compile time that will only partially
+be used.
 
 4. Copy your Serial Monitor output from Part III below:  
 (Paste here)
