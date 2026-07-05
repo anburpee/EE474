@@ -33,7 +33,12 @@ Using pointers reduces the memory overhead because it eliminates the need to cop
 whenever you are trying to modify or pass into functions.
 
 4. Copy your Serial Monitor output from Part I below:  
-(Paste here)
+=================== PART I ======================
+a = 100, *p = 100
+Address of a: 0x3fcebd0c
+a = 55, *p = 55, *q = 55
+Original b = 200
+a = 55, New b = 200
 
 ---
 
@@ -55,7 +60,20 @@ An example of a situation you would want to transfer raw bytes is during the sta
 where you copy initial data from some non-volatile flash memory into SRAM for immediate access.
 
 4. Copy your Serial Monitor output from Part II below:  
-(Paste here)
+=================== PART II =====================
+Integer array:
+intArr[0] = 10, address: 0x3fcebcd8
+intArr[1] = 20, address: 0x3fcebcdc
+intArr[2] = 30, address: 0x3fcebce0
+intArr[3] = 40, address: 0x3fcebce4
+intArr[4] = 50, address: 0x3fcebce8
+Char array:
+charArr[0] = A, address: 0x3fcebcd3
+charArr[1] = B, address: 0x3fcebcd4
+charArr[2] = C, address: 0x3fcebcd5
+charArr[3] = D, address: 0x3fcebcd6
+charArr[4] = E, address: 0x3fcebcd7
+dest: hello world
 
 ---
 
@@ -83,9 +101,18 @@ unnecessary memory (that is predicted to be needed) during compile time that wil
 be used.
 
 4. Copy your Serial Monitor output from Part III below:  
-(Paste here)
+=================== PART III ====================
+Sensor 0 - ID: 123, Label: label0, Reading: 1.230000
+Updated sensor 0 reading via pointer: 1.230000
+Sensor 1 - ID: 123, Label: label0, Reading: 2.340000
+
+Allocated 3 sensors...
+Sensor 0 - ID: 100, Label: T0, Reading: 0.670000
+Sensor 1 - ID: 101, Label: T1, Reading: 1.670000
+Sensor 2 - ID: 102, Label: T2, Reading: 2.670000
 
 ---
 
 Anything else you'd like us to know? (bugs, challenges, feedback, etc.):  
-(Optional)
+
+I did all of HW1 on VS Code using Aruduino CLI and it worked pretty well.

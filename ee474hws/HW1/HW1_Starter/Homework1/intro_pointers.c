@@ -30,7 +30,7 @@ void run_intro_pointers() {
     // Step 3
     // =================> TODO: Declare b = 200
     int b = 200;
-    // printf("Original b = %d\n", b);
+    printf("Original b = %d\n", b);
 
     // =================> TODO: Reassign p to point at b
     p = &b;
@@ -39,5 +39,5 @@ void run_intro_pointers() {
     *p = 200;
 
     // =================> TODO: Print a and b
-    printf("a = %d, b = %d", a, b);
+    printf("a = %d, New b = %d\n", a, b);
 }

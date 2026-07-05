@@ -17,17 +17,19 @@ void run_pointer_basics() {
 
     // Step 1
     // =================> TODO: Declare and initialize an int[5] array
-    int intArr[5] = {0, 1, 2, 3, 4};
+    int intArr[5] = {10, 20, 30, 40, 50};
 
     // =================> TODO: Declare and initialize a char[5] array
-    char charArr[5] = "yooo";
+    char charArr[5] = "ABCDE";
 
     // =================> TODO: Print value and address of each element using a for loop
+    printf("Integer array:\n");
     for (int i = 0; i < 5; i++) {
-        printf("Address of intArr[%d]: %p | value: %d\n", i, (void*)(&intArr[i]));
+        printf("intArr[%d] = %d, address: %p\n", i, intArr[i], (void*)(&intArr[i]));
     }
+    printf("Char array:\n");
     for (int i = 0; i < 5; i++) {
-        printf("Address of charArr[%d]: %p | value: %d\n", i, (void*)(&charArr[i]));
+        printf("charArr[%d] = %c, address: %p\n", i, charArr[i], (void*)(&charArr[i]));
     }
 
 
@@ -37,9 +39,9 @@ void run_pointer_basics() {
     char dest[20] = {};
 
     // =================> TODO: Use my_memcpy() to copy string
-    my_memcpy(dest, str, 20);
+    my_memcpy(dest, str, strlen(str) + 1); // strlen() doesn't include null terminator
 
     
     // =================> TODO: Print copied string
-    printf("dest: %s", dest);
+    printf("dest: %s\n", dest);
 }
