@@ -34,7 +34,7 @@ void setup() {
   timer_config |= TIMG_T0_INCREASE;
 
   // added to specify that we're using the 40MHz clock
-  timer_config |= TIMG_T0_USE_XTAL; // without this line, would use ABP_CLOCK
+  timer_config |= TIMG_T0_USE_XTAL; // without this line, would use APB_CLOCK
 
   // enable timer
   timer_config |= TIMER_ENABLE;
